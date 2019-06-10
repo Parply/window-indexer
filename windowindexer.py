@@ -1,5 +1,15 @@
-def windowindexer(iterable,take,skip,start=0,end=None,take_first=True):
+def windowIndexer(iterable,take,skip,start=0,end=None,take_first=True):
+    """
+    yields windows in an iterable. Will take (yield) then skip or vice versa from
+    iterable in range specified by start and end points
     
+    iterable = iterable to iterate over such as a list
+    take = number of concurrent elements to yield
+    skip = number of concurrent elements to skip
+    start = start point for taking windows
+    end = end point for taking windows if none does to end of iterable
+    take_first = if true will yield first then skip if false will skip then yield
+    """
     if end == None:
         end=len(iterable)
     else:
